@@ -1,7 +1,6 @@
+import 'package:async_notifier/apps/weather/screen/todo_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'apps/weather/screen/weather_screen.dart';
 
 void main() {
   runApp(
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const WeatherScreen(),
+      home: const TodoListView(),
     );
   }
 }

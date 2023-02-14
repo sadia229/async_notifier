@@ -1,26 +1,28 @@
+// import 'dart:async';
 
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+// import 'package:async_notifier/apps/weather/repository/product_repository.dart';
+// import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../model/product_model.dart';
+// import '../model/product_model.dart';
+
+// final productNotifyProvider =
+//     AsyncNotifierProvider.autoDispose<ProductNotifier, ProductModel>(
+//   ProductNotifier().getAllBills(),
+// );
 
 
-final billNotifyProvider =
-StateNotifierProvider<BillsNotifier, List<ProductModel>>((ref) {
-  return BillsNotifier(billRepository: ProductRepository());
-});
+// ProductRepository? productRepository;
 
+// class ProductNotifier extends AutoDisposeAsyncNotifier<ProductModel> {
+//   getAllBills() async {
+//     var response = await productRepository?.getProducts();
+//     ProductModel? products = response;
+//     state = products as AsyncValue<ProductModel>;
+//   }
 
-class BillsNotifier extends StateNotifier<List<ProductModel>> {
-  BillRepository billRepository;
-
-  BillsNotifier({required this.billRepository}) : super([]) {
-    getAllBills();
-  }
-
-  getAllBills() async {
-    var response = await billRepository.getBills();
-    List<Data> productData = response.data!.map((e) => e).toList();
-    state = productData;
-  }
-}
-
+//   @override
+//   FutureOr<ProductModel> build() {
+//     //return getAllBills();
+//     throw UnimplementedError();
+//   }
+// }
